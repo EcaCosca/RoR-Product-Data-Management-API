@@ -1,0 +1,97 @@
+file = File.open('.')\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+file = File.open('')\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+rails 
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+require 'active_support/core_ext/string/unicode'
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+ActiveRecord::Base.connection
+Product.last
+exit
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+Product.count
+exit
+Product.count
+exit
+Product.count
+Product.create(name: "Test Product", price: 9.99, expiration: Date.today, currencies: { usd: 9.99, eur: 8.49 })\
+Product.last
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit
+file = File.open(Rails.root.join('data.csv'))\
+processed_data = FileProcessingService.process_file(file)\
+puts processed_data.inspect
+exit

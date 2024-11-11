@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 antialiased font-sans">
+  <div class="container mx-auto py-8">
+    <h1 class="text-4xl font-bold text-center text-blue-600 mb-8">Product Management</h1>
+
+    <!-- File Upload Form -->
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold mb-4">Upload CSV</h2>
+      <form action="/products/upload" method="post" enctype="multipart/form-data" class="space-y-4">
+        <div class="flex items-center space-x-4">
+          <input type="file" name="file" required class="border border-gray-300 rounded-lg p-2 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+          <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-600 transition-transform duration-200 transform hover:scale-105">Upload File</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Search Products Form -->
+    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+      <h2 class="text-2xl font-bold mb-4 text-center">Search Products</h2>
+      <form action="<%= search_products_path %>" method="get" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Product Name</label>
+          <input type="text" name="name" id="name" class="mt-1 p-2 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200" placeholder="Enter product name">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="min_price" class="block text-sm font-medium text-gray-700">Min Price</label>
+            <input type="number" step="0.01" name="min_price" id="min_price" class="mt-1 p-2 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200" placeholder="Min price">
+          </div>
+          <div>
+            <label for="max_price" class="block text-sm font-medium text-gray-700">Max Price</label>
+            <input type="number" step="0.01" name="max_price" id="max_price" class="mt-1 p-2 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200" placeholder="Max price">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="min_expiration" class="block text-sm font-medium text-gray-700">Min Expiration Date</label>
+            <input type="date" name="min_expiration" id="min_expiration" class="mt-1 p-2 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+          </div>
+          <div>
+            <label for="max_expiration" class="block text-sm font-medium text-gray-700">Max Expiration Date</label>
+            <input type="date" name="max_expiration" id="max_expiration" class="mt-1 p-2 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+          </div>
+        </div>
+
+        <div>
+          <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow hover:shadow-lg transition-transform duration-200 transform hover:scale-105">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Products List -->
+    <div class="bg-white shadow-lg rounded-lg p-6">
+      <h2 class="text-2xl font-bold mb-4 text-center">Products</h2>
+
+      <!-- Table for Products -->
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-lg overflow-hidden">
+          <thead>
+            <tr class="bg-blue-100">
+              <th class="text-left py-3 px-4 font-semibold text-gray-600">Name</th>
+              <th class="text-left py-3 px-4 font-semibold text-gray-600">Price</th>
+              <th class="text-left py-3 px-4 font-semibold text-gray-600">Expiration Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @products.each do |product| %>
+              <tr class="border-b transition duration-200 ease-in-out hover:bg-gray-100">
+                <td class="py-3 px-4 text-gray-800 font-medium"><%= product.name %></td>
+                <td class="py-3 px-4 text-green-600 font-semibold"><%= number_to_currency(product.price) %></td>
+                <td class="py-3 px-4 text-gray-500"><%= product.expiration.strftime('%Y-%m-%d') if product.expiration %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
