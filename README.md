@@ -70,24 +70,6 @@ end
 
 5. Access the application at [http://localhost:3000](http://localhost:3000).
 
-## Development
-
-### Environment Variables
-
-Create a `.env` file in the root directory and set up the following environment variables:
-
-- `DATABASE_URL`: The connection string for your PostgreSQL database.
-- `CURRENCY_API_URL`: The URL of the API providing currency exchange rates.
-
-Example:
-
-```env
-DATABASE_URL=your_database_url
-CURRENCY_API_URL=https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json
-```
-
-## Links
-
 ### Technologies
 
 - Ruby on Rails
